@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>hangman</title>
+</head>
+<body>
+<h1>hangman</h1>
+
+<script>
+alert("made my barimah")
+var words = [
+"loe messi",
+"cristiano ronaldo",
+"gareth bale",
+"eden hazard"
+];
+var word = words[Math.floor(Math.random() * words.length)];
+var answerArray = [];
+for (var i = 0; i < word.length; i++) {
+  answerArray[i] = "_";
+  }
+  var remainingLetters = word.length;
+  while (remainingLetters > 0) {
+    alert(answerArray.join(" "));
+    var guess = prompt("Guess a letter, or click cancel to stop playing.");
+  
+if (guess === null) {
+            break;
+         } else if (guess.length !== 1) {
+           alert("Please enter a single letter.");
+      } else {
+for (var j = 0; j < word.length; j++) {
+	if (word[j] === guess) {
+answerArray[j] = guess;
+remainingLetters--;
+	}
+  }
+}
+}
+alert(answerArray.join(" "));
+alert("good job.you are smart.The answer was " + word);
+</script>
+</body>
+</html>
